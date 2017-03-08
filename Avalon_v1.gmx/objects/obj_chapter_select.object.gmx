@@ -105,7 +105,7 @@ if(fly_off==false)
         move=0;
     }
     //enter or space selects something on the menu
-    push = max(keyboard_check_released(vk_enter),0);
+    push = max(keyboard_check_released(vk_enter),keyboard_check_released(vk_space),0);
     if (push == 1) 
     {
         fly_off=true;
@@ -131,12 +131,6 @@ else
             instance_destroy();
         }
     }
-}
-
-push_end = max(keyboard_check_released(vk_escape),0)
-if (push_end == 1) 
-{
-game_end();
 }
 </string>
           </argument>

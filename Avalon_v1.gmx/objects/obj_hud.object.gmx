@@ -97,7 +97,7 @@ draw_set_alpha(1);
           <argument>
             <kind>1</kind>
             <string>draw_self();
-draw_set_halign(fa_right);
+draw_set_halign(fa_left);
 //fps counter. if this ever goes under 30, we have a memory leak
 draw_text(32,32, "FPS: " + string(fps_real));
 
