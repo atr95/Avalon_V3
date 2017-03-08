@@ -54,9 +54,10 @@ alarm[0]=room_speed*1;
 x-=8; // Travel across the screen. If we make it across, 
 //spawn a lancer in the other direction, but closer to the player.
 
-if (x &gt; room_width + 128)
+if (x &lt; -128)
 {
-    instance_create(x, y - 128, obj_lancer_2);  
+    instance_create(x, y + 128, obj_lancer_2_a); 
+    global.enemies += 1; 
     instance_destroy();      
 }
 }

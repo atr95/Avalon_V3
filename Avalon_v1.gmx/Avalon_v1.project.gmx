@@ -62,10 +62,12 @@
       <script>scripts\scr_lancer_pentad.gml</script>
       <script>scripts\scr_lancer_single.gml</script>
       <script>scripts\scr_lancer_pair.gml</script>
+      <script>scripts\scr_lancer_sideways_1.gml</script>
     </scripts>
     <scripts name="scr_group_dread_spawns">
       <script>scripts\scr_dread_1.gml</script>
     </scripts>
+    <script>scripts\scr_medkit.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_main_menu</font>
