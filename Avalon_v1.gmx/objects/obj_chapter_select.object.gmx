@@ -46,8 +46,7 @@ if(string_width(string(menu[i]))&gt;l)
     l=string_width(string(menu[i]));
 }
 }
-//fade in
-a=0;
+a=1;
 fly_off=false;
 x_fly=0;
 fade_out=0;
@@ -106,18 +105,11 @@ if(fly_off==false)
         move=0;
     }
     //enter or space selects something on the menu
-    push = max(keyboard_check_released(vk_enter),keyboard_check_released(vk_space),0);
+    push = max(keyboard_check_released(vk_enter),0);
     if (push == 1) 
     {
         fly_off=true;
     }  
-  
-    //This controls fade in
-    //a is short for image_alpha
-    if(a&lt;1)
-    {
-        a+=0.05;
-    }
 }
 else
 {
@@ -189,7 +181,7 @@ draw_sprite(sprite_index,0, x+x_fly, y+(menu_position * space));
 }
 
 //when we get a title, here is the code for drawing that.
-draw_sprite(spr_title,0,512,256);
+draw_sprite(spr_title,0,384,256);
 </string>
           </argument>
         </arguments>

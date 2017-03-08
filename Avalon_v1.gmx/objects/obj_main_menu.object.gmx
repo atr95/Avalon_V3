@@ -99,7 +99,7 @@ push_end=0;
         move=0;
     }
 //enter or space selects something on the menu
-    push = max(keyboard_check_released(vk_enter),keyboard_check_released(vk_space),0);
+    push = max(keyboard_check_released(vk_enter),0);
     if (push == 1) 
     {
      scr_main_menu();
@@ -158,7 +158,7 @@ for(i=0; i &lt; array_length_1d(menu); i += 1)
 draw_sprite(sprite_index, 0, x, y+(menu_position * space));
 
 //when we get a title, here is the code for drawing that.
-draw_sprite(spr_title,0,512,256);
+draw_sprite(spr_title,0,384,256);
 </string>
           </argument>
         </arguments>
