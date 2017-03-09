@@ -53,9 +53,11 @@ start=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//spawn medkits
-scr_medkit()
-alarm[9] = room_speed * 35;
+            <string>//spawn medkits if health is low.
+if(obj_player_parent.player_health &lt; 50){
+    scr_medkit()
+}
+alarm[9] = room_speed * 30;
 </string>
           </argument>
         </arguments>
@@ -199,7 +201,6 @@ if(global.enemies &lt; 1)
             break;
         
         case (6):
-            scr_medkit();
             scr_grunt_running_pyramid();
             scr_grunt_running_pyramid();
             scr_lancer_pair()
@@ -234,21 +235,23 @@ if(global.enemies &lt; 1)
             scr_grunt_4_back();
             scr_grunt_running_pyramid();
             scr_grunt_trackers_2();
-            scr_medkit();
             global.encounter_number += 1;
             break;
             
-        case (11):  // Boss fight
+        case (11):  // mini-Boss fight
             // Spawn Boss
             scr_dread_1();
             global.encounter_number += 1;
             break;
             
         case (12):  // Victory
-            // Victory transition
+            scr_boss_spawn();
             global.encounter_number += 1;
-            alarm[2] = room_speed * 3;
             break;
+        case(13):
+        //Real victory
+        room_goto_next();
+        break;
     }
 }
 }

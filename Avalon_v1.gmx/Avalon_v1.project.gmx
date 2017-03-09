@@ -30,6 +30,8 @@
     <sprites name="spr_group_enemy">
       <sprite>sprites\spr_enemy</sprite>
       <sprite>sprites\spr_enemy_bullet</sprite>
+      <sprite>sprites\spr_dragon_bullet</sprite>
+      <sprite>sprites\spr_dragonfire</sprite>
       <sprites name="spr_group_grunt">
         <sprite>sprites\spr_grunt_base</sprite>
         <sprite>sprites\spr_grunt_1</sprite>
@@ -93,6 +95,7 @@
       <script>scripts\scr_dread_2.gml</script>
     </scripts>
     <script>scripts\scr_medkit.gml</script>
+    <script>scripts\scr_boss_spawn.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_main_menu</font>
@@ -148,7 +151,9 @@
         <object>objects\obj_enemy_bullet_parent</object>
         <object>objects\obj_grunt_bullet</object>
         <object>objects\obj_dread_bullet</object>
+        <object>objects\obj_dragon_bullet</object>
         <object>objects\obj_lancer_bullet</object>
+        <object>objects\obj_bullet_dragonfire</object>
       </objects>
       <objects name="obj_group_dread">
         <object>objects\obj_dread_parent</object>
@@ -160,6 +165,7 @@
         <object>objects\obj_dragon_right_1</object>
         <object>objects\obj_dragon_left_1</object>
         <object>objects\obj_dragon_head_1</object>
+        <object>objects\obj_dragon_parent</object>
       </objects>
     </objects>
     <objects name="obj_group_level_spawners">
