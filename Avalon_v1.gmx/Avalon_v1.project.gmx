@@ -48,6 +48,19 @@
         <sprite>sprites\spr_dread_1</sprite>
         <sprite>sprites\spr_dread_2</sprite>
       </sprites>
+      <sprites name="spr_group_boss">
+        <sprite>sprites\spr_dragon_head</sprite>
+        <sprite>sprites\spr_dragon_left</sprite>
+        <sprite>sprites\spr_dragon_right</sprite>
+        <sprite>sprites\spr_morgan</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="obj_group_alt_bullets">
+      <sprite>sprites\spr_bullet_0</sprite>
+      <sprite>sprites\spr_bullet_1</sprite>
+      <sprite>sprites\spr_bullet_2</sprite>
+      <sprite>sprites\spr_bullet_3</sprite>
+      <sprite>sprites\spr_bullet_4</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -153,6 +166,10 @@
     <objects name="obj_group_music">
       <object>objects\obj_music_1</object>
       <object>objects\obj_music_2</object>
+    </objects>
+    <objects name="obj_boss">
+      <object>objects\obj_morgan</object>
+      <object>objects\obj_dragon_head_1</object>
     </objects>
   </objects>
   <rooms name="rooms">
