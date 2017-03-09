@@ -14,7 +14,6 @@
       <sprite>sprites\spr_splash_screen</sprite>
       <sprite>sprites\spr_main_menu</sprite>
       <sprite>sprites\spr_title</sprite>
-      <sprite>sprites\spr_game_over</sprite>
       <sprite>sprites\spr_text_box</sprite>
     </sprites>
     <sprites name="spr_group_player">
@@ -112,7 +111,6 @@
     </objects>
     <objects name="obj_group_player">
       <object>objects\obj_player_parent</object>
-      <object>objects\obj_player_shield</object>
       <object>objects\obj_player_lvl_2</object>
       <object>objects\obj_player_lvl_3</object>
       <object>objects\obj_player_lvl_4</object>
