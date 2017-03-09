@@ -244,11 +244,16 @@ if(global.enemies &lt; 1)
             global.encounter_number += 1;
             break;
             
-        case (12):  // Victory
+        case (12): //story event
+            scr_story_1();
+            global.encounter_number+=1;
+            break;    
+            
+        case (13):  // Victory
             scr_boss_spawn();
             global.encounter_number += 1;
             break;
-        case(13):
+        case(14):
         //Real victory
         room_goto_next();
         break;

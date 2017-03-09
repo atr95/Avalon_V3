@@ -62,6 +62,31 @@ switch(global.text_scene)
     Good luck my King!");
     break;
     }
+    case 3:
+    {
+    draw_text(x+8,y+96,"
+    COMMUNICATION INCOMING...");
+    break;
+    }
+    case 4:
+    {
+    draw_text(x+8,y+96,"
+    Merlin: You made short work of those Frenchmen of Alpha Centauri!
+    ...hmm... but what's this? I detect something approaching you!
+    It's moving fast... It looks like...");
+    break;
+    }
+    case 5:
+    {
+    draw_text(x+8,y+96,"
+    Morgan Le Flay: Hello Arthur, it's so nice to see you!
+    Did you fly all the way out here just to see me?
+    I see that you've dealt with those puppets of mine
+    without breaking a sweat.
+    Let's see how you face against my ship,
+    The Infamous Destroyer-class Dragoon!");
+    break;
+    }
     default:
     {
     break;

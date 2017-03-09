@@ -7,6 +7,8 @@
   <sounds name="sound">
     <sound>sound\snd_song_1</sound>
     <sound>sound\snd_song_2</sound>
+    <sound>sound\snd_enemy_hit</sound>
+    <sound>sound\snd_arthur_hit</sound>
     <sound>sound\snd_explosion</sound>
   </sounds>
   <sprites name="sprites">
@@ -96,6 +98,9 @@
     </scripts>
     <script>scripts\scr_medkit.gml</script>
     <script>scripts\scr_boss_spawn.gml</script>
+    <scripts name="scr_group_story">
+      <script>scripts\scr_story_1.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_main_menu</font>
@@ -106,6 +111,7 @@
       <object>objects\obj_text_box</object>
       <object>objects\obj_story</object>
       <object>objects\obj_story_lvl1_start</object>
+      <object>objects\obj_story_lvl1_end</object>
     </objects>
     <objects name="obj_group_menu">
       <object>objects\obj_main_menu</object>
