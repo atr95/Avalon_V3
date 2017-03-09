@@ -127,7 +127,8 @@ alarm[0]=3*room_speed;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_goto(rm_main_menu);
+            <string>//game over stuff
+room_goto(rm_game_over);
 </string>
           </argument>
         </arguments>
@@ -362,6 +363,8 @@ else
         //respawn
         if(died==false)
         {
+            //death sound
+            audio_play_sound(snd_explosion, 0, false);
             died=true;
             player_lives--;
             alarm[3]=room_speed*1;
@@ -369,9 +372,10 @@ else
     }
     else if(player_lives&lt;0 &amp;&amp; game_over=false)
     {
+        audio_play_sound(snd_explosion, 0, false);
         //game over stuff
         game_over=true;
-        alarm[2]=room_speed*3;
+        alarm[2]=room_speed*1;
     }
 }
 }

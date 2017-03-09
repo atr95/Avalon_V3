@@ -113,7 +113,12 @@ if(fly_off==false)
         {
         audio_sound_gain(music,0,2500);
         }
-    }  
+    } 
+    
+    if(keyboard_check_released(vk_escape))
+    {
+        game_end();
+    } 
 }
 else
 {
