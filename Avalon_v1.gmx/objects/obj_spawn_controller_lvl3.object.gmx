@@ -36,6 +36,81 @@ start=false;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="11">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//spawn dreadnaught after some time. only 1.
+scr_dread_1();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// Spawn in dreadnaught 2. increase encounter number.
+
+scr_dread_2();
+global.encounter_number += 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// spawn grunt forts
+alarm[7] = room_speed * 9;
+scr_grunt_moving_fort();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="6">
       <action>
         <libid>1</libid>
@@ -128,7 +203,7 @@ scr_lancer_pentad();
           <argument>
             <kind>1</kind>
             <string>// Grunt moving tracker spawner
-alarm[3] = room_speed * 8;
+alarm[3] = room_speed * 8.5;
 scr_grunt_moving_tracker_3();
 </string>
           </argument>
@@ -247,62 +322,93 @@ if(global.enemies &lt; 1)
        
        case (1):
             alarm[3] = 1;
+            scr_grunt_mobile_line();
+            scr_grunt_trackers_2();
             global.encounter_number += 1;
             break;
         
         case (2):
-
+        alarm[3] = 0;
+        alarm[7] = 1;
+            scr_grunt_moving_fort();
+            scr_lancer_sideways_1();
+            scr_grunt_4_back();
             global.encounter_number += 1;
             break;
         
         case (3):
-
+            alarm[5] = 1;
+            alarm[6] = room_speed * 1.5;
+            scr_medkit();
             global.encounter_number += 1;
             break;
         
         case (4):
-
+            scr_grunt_moving_fort();
+            scr_lancer_pair();
+            scr_grunt_trackers_2();
             global.encounter_number += 1;
             break;
         
         case (5):
-
+            alarm[7] = 0;
+            scr_medkit();
+            scr_grunt_mobile_line()
+            scr_grunt_trackers_4()
+            alarm[11] = room_speed * 5; // 5 seconds until dreadnaught spawns
             global.encounter_number += 1;
             break;
         
         case (6):
-
+            scr_medkit();
+            alarm[7] = 1;
+            alarm[1] = 1;
+            scr_grunt_5_back();
             global.encounter_number += 1;
             break;
             
         case (7): 
-
+            alarm[5] = 1;
+            alarm[6] = room_speed;
             global.encounter_number += 1;
             break;
             
         case (8):
-
+            alarm[7] = 0;
+            alarm[4] = 1;
+            alarm[1] = 0;
+            scr_medkit();
+            scr_grunt_mobile_line();
             global.encounter_number += 1;
             break;
             
         case (9):
-
+            alarm[4] = 0
+            scr_grunt_running_pyramid();
+            scr_grunt_moving_tracker_3();
+            scr_grunt_5_back();
             global.encounter_number += 1;
             break;
             
-        // Another Dreadnaught miniboss
         case (10):
-
+            scr_medkit();
+            scr_medkit();
+            scr_medkit();
             global.encounter_number += 1;
+            alarm[10] = room_speed * 15;
+            // Alarm 10 spawns dreadnaught 2 and increases encounter_number
             break;
             
-        case (11): // Real Boss
-        alarm[3] = 0;
-        scr_grunt_4_back();
-            global.encounter_number += 1;
+        case (11): // new dreadnaught
+            //wait for dreadnaught to spawn
             break;
             
         case (12):  // Victory
+            scr_grunt_5_back();
+            global.encounter_number += 1;
+            break;
+            
+        case (13):  // Victory
             // Victory transition
             global.encounter_number += 1;
             alarm[2] = room_speed * 3;
