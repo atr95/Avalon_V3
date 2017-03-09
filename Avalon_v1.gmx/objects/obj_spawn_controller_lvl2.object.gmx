@@ -25,12 +25,61 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Level 1 spawn system. 
+            <string>// Level 2 spawn system. 
 global.enemies = 0;
 global.encounter_number = 0;
 //gives the player a few seconds before it starts
 alarm[0]=room_speed*3;
 start=false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Stop spawning sideways lancers
+alarm[5] = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// spawn lots of sideways lancers
+alarm[5] = room_speed / 2;
+scr_lancer_sideways_1();
 </string>
           </argument>
         </arguments>
@@ -79,7 +128,7 @@ scr_lancer_pentad();
           <argument>
             <kind>1</kind>
             <string>// Grunt pyramid spawner
-alarm[3] = room_speed * 6;
+alarm[3] = room_speed * 12;
 scr_grunt_running_pyramid();
 </string>
           </argument>
@@ -191,27 +240,32 @@ if(global.enemies &lt; 1)
         case (0):
             scr_grunt_running_diaganal_5();
             scr_grunt_running_diaganal_5();
+            scr_grunt_trackers_4();
             global.encounter_number += 1;
             break;
        
        case (1):
         alarm[1] = 5; // Start the lancer runs.
             scr_grunt_mobile_line();
-            
             global.encounter_number += 1;
             break;
         
         case (2):
-        
+            scr_grunt_running_diaganal_5();
+            scr_grunt_trackers_2();
             global.encounter_number += 1;
             break;
         
         case (3):
             alarm[3] = 5; //start grunt pyramid runs.
+            scr_lancer_sideways_1();
             global.encounter_number += 1;
             break;
         
         case (4):
+            scr_lancer_sideways_1();
+            scr_lancer_pair();
+            scr_medkit();
             global.encounter_number += 1;
             break;
         
@@ -230,27 +284,41 @@ if(global.enemies &lt; 1)
             global.encounter_number += 1;
             break;
             
-        case (7):
-        alarm[4] = 0; // stop the hell.
+        case (7): // Dreadnaught with lancer runs.
+        alarm[4] = 0; // stop the pentad hell.
         scr_dread_1();
-        alarm[1] = 1;
+        scr_lancer_sideways_1();
             global.encounter_number += 1;
             break;
             
         case (8):
-        alarm[1] = 0;
+        alarm[1] = 1;// start lancers
+        alarm[3] = 1;// start grunts
+        scr_grunt_trackers_4()
+        scr_lancer_sideways_1();
             global.encounter_number += 1;
             break;
             
         case (9):
-            global.encounter_number += 1;
-            break;
-        
-        case (10):
+        alarm[1] = 0;
+        alarm[3] = 0;
+            alarm[5] = 1;
+            alarm[6] = room_speed * 2;
             global.encounter_number += 1;
             break;
             
-        case (11):
+        // Another Dreadnaught miniboss
+        case (10):
+            scr_medkit();
+            alarm[1] = 0;
+            alarm[3] = 1;
+            scr_dread_1();
+            global.encounter_number += 1;
+            break;
+            
+        case (11): // Real Boss
+        alarm[3] = 0;
+        scr_grunt_4_back();
             global.encounter_number += 1;
             break;
             

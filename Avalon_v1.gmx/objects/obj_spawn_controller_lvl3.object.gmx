@@ -25,9 +25,187 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Level 1 spawn system. 
+            <string>// Level 3 spawn system. 
 global.enemies = 0;
 global.encounter_number = 0;
+//gives the player a few seconds before it starts
+alarm[0]=room_speed*3;
+start=false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Stop spawning sideways lancers
+alarm[5] = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// spawn lots of sideways lancers
+alarm[5] = room_speed / 2;
+scr_lancer_sideways_1();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// Spawn lancer pentad. 
+alarm[4] = room_speed * 5;
+scr_lancer_pentad();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// Grunt moving tracker spawner
+alarm[3] = room_speed * 8;
+scr_grunt_moving_tracker_3();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Victory timer!
+
+room_goto_next();
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>// Alarm one: Spawn one lancer every few seconds.
+if (global.encounter_number &lt; 12)
+{
+    alarm[1] = room_speed * 5;
+    scr_lancer_single();
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>start=true;
 </string>
           </argument>
         </arguments>
@@ -52,16 +230,85 @@ global.encounter_number = 0;
             <kind>1</kind>
             <string>// Case statement to create the enemy encounters.
 // enemies and encounter_number
+if(start==true) //start becomes true after 5 seconds pass. 
+{
 if(global.enemies &lt; 1)
 {
     switch (global.encounter_number)
     {
+       
         case (0):
+            alarm[5] = 1;
+            alarm[6] = room_speed * 1;
             scr_grunt_4_back();
+            
             global.encounter_number += 1;
-    
+            break;
+       
+       case (1):
+            alarm[3] = 1;
+            global.encounter_number += 1;
+            break;
+        
+        case (2):
 
+            global.encounter_number += 1;
+            break;
+        
+        case (3):
+
+            global.encounter_number += 1;
+            break;
+        
+        case (4):
+
+            global.encounter_number += 1;
+            break;
+        
+        case (5):
+
+            global.encounter_number += 1;
+            break;
+        
+        case (6):
+
+            global.encounter_number += 1;
+            break;
+            
+        case (7): 
+
+            global.encounter_number += 1;
+            break;
+            
+        case (8):
+
+            global.encounter_number += 1;
+            break;
+            
+        case (9):
+
+            global.encounter_number += 1;
+            break;
+            
+        // Another Dreadnaught miniboss
+        case (10):
+
+            global.encounter_number += 1;
+            break;
+            
+        case (11): // Real Boss
+        alarm[3] = 0;
+        scr_grunt_4_back();
+            global.encounter_number += 1;
+            break;
+            
+        case (12):  // Victory
+            // Victory transition
+            global.encounter_number += 1;
+            alarm[2] = room_speed * 3;
+            break;
     }
+}
 }
 </string>
           </argument>
