@@ -164,7 +164,7 @@ if(global.enemies &lt; 1)
     {
         // Introduce first enemy.
         case (0):
-        alarm[9] = room_speed * 50;
+        alarm[9] = room_speed * 50; // set healthpacks to spawn.
             scr_grunt_4_back();
             global.encounter_number += 1;
             break;
