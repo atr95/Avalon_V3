@@ -15,6 +15,7 @@
       <sprite>sprites\spr_main_menu</sprite>
       <sprite>sprites\spr_title</sprite>
       <sprite>sprites\spr_text_box</sprite>
+      <sprite>sprites\spr_game_over</sprite>
     </sprites>
     <sprites name="spr_group_player">
       <sprite>sprites\spr_player_shield</sprite>
