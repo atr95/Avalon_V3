@@ -99,7 +99,7 @@
     </objects>
     <objects name="obj_group_player">
       <object>objects\obj_player_parent</object>
-      <object>objects\obj_player_lvl_1</object>
+      <object>objects\obj_player_shield</object>
       <object>objects\obj_player_lvl_2</object>
       <object>objects\obj_player_lvl_3</object>
       <object>objects\obj_player_lvl_4</object>
