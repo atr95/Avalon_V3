@@ -30,7 +30,7 @@ a_press=false;
 s_press=false;
 d_press=false;
 image_speed=0;
-alarm[0]=room_speed * 1.5; //shield lifespan
+alarm[0]=room_speed * 3; //shield lifespan
 </string>
           </argument>
         </arguments>
