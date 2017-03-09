@@ -154,6 +154,12 @@
         <object>objects\obj_dread_1</object>
         <object>objects\obj_dread_2</object>
       </objects>
+      <objects name="obj_boss">
+        <object>objects\obj_morgan</object>
+        <object>objects\obj_dragon_right_1</object>
+        <object>objects\obj_dragon_left_1</object>
+        <object>objects\obj_dragon_head_1</object>
+      </objects>
     </objects>
     <objects name="obj_group_level_spawners">
       <object>objects\obj_spawn_controller_lvl1</object>
@@ -164,10 +170,6 @@
     <objects name="obj_group_music">
       <object>objects\obj_music_1</object>
       <object>objects\obj_music_2</object>
-    </objects>
-    <objects name="obj_boss">
-      <object>objects\obj_morgan</object>
-      <object>objects\obj_dragon_head_1</object>
     </objects>
   </objects>
   <rooms name="rooms">
