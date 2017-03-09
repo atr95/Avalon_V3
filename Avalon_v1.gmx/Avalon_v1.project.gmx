@@ -29,6 +29,8 @@
     <sprites name="spr_group_enemy">
       <sprite>sprites\spr_enemy</sprite>
       <sprite>sprites\spr_enemy_bullet</sprite>
+      <sprite>sprites\spr_dragon_bullet</sprite>
+      <sprite>sprites\spr_dragonfire</sprite>
       <sprites name="spr_group_grunt">
         <sprite>sprites\spr_grunt_base</sprite>
         <sprite>sprites\spr_grunt_1</sprite>
@@ -51,7 +53,6 @@
         <sprite>sprites\spr_dragon_head</sprite>
         <sprite>sprites\spr_dragon_left</sprite>
         <sprite>sprites\spr_dragon_right</sprite>
-        <sprite>sprites\spr_dragon_r</sprite>
         <sprite>sprites\spr_morgan</sprite>
       </sprites>
     </sprites>
@@ -149,7 +150,9 @@
         <object>objects\obj_enemy_bullet_parent</object>
         <object>objects\obj_grunt_bullet</object>
         <object>objects\obj_dread_bullet</object>
+        <object>objects\obj_dragon_bullet</object>
         <object>objects\obj_lancer_bullet</object>
+        <object>objects\obj_bullet_dragonfire</object>
       </objects>
       <objects name="obj_group_dread">
         <object>objects\obj_dread_parent</object>
@@ -161,6 +164,7 @@
         <object>objects\obj_dragon_right_1</object>
         <object>objects\obj_dragon_left_1</object>
         <object>objects\obj_dragon_head_1</object>
+        <object>objects\obj_dragon_parent</object>
       </objects>
     </objects>
     <objects name="obj_group_level_spawners">

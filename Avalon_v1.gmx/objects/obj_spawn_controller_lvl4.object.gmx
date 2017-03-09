@@ -63,6 +63,57 @@ alarm[9] = room_speed * 30;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_boss_spawn();
+global.encounter_number += 1;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//spawn sideways lancers.
+
+instance_create(-128, 256, obj_lancer_2_a);
+instance_create(room_width + 128, 352, obj_lancer_3_a);
+alarm[6] = room_speed;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="5">
       <action>
         <libid>1</libid>
@@ -83,6 +134,7 @@ alarm[9] = room_speed * 30;
             <string>// shut it down
 alarm[3] = 0;
 alarm[4] = 0;
+alarm[6] = 0;
 </string>
           </argument>
         </arguments>
@@ -214,7 +266,8 @@ if(global.enemies &lt; 1)
     switch (global.encounter_number)
     {
         case (0):
-            scr_dread_2();
+            scr_dread_1();
+            scr_grunt_trackers_2();
             global.encounter_number += 1;
             break;
     
@@ -227,7 +280,7 @@ if(global.enemies &lt; 1)
         
         case (2):
             alarm[2] = 0;
-            alarm[11] = 1; // Begin spawning health packs once every 30 seconds.
+            alarm[11] = 1; // Begin spawning health packs once every 60 seconds.
             alarm[3] = 1 // Begin lancer runs alternate between doubles and triples.
             alarm[4] = 1 //Lancer triple. switch back to double.
             alarm[5] = room_speed * 20; //stop the lancers.
@@ -249,29 +302,42 @@ if(global.enemies &lt; 1)
             break;
         
         case (5):
-        alarm[2] = 0;
-            
+            alarm[6] = 1;
+            alarm[5] = room_speed * 2;
             global.encounter_number += 1;
             break;
         
         case (6):
+            scr_medkit();
+            scr_dread_1();
+            scr_grunt_5_back();
             global.encounter_number += 1;
             break;
             
         case (7): 
-            
+            scr_dread_2();
+            alarm[2] = room_speed * 15;
             global.encounter_number += 1;
             break;
             
         case (8):  // Morgan Le Flay
-            scr_grunt_5_back();
+            scr_medkit();
+            scr_medkit();
+            scr_medkit();
+            scr_medkit();
+            alarm[7] = room_speed * 10;
             global.encounter_number += 1;
             break;
             
         case (9):  // Victory
             // Victory transition
+            // After the player kills the boss, advance.
+            break;
+            
+        case (10):  // Victory
+            // Victory transition
             global.encounter_number += 1;
-            alarm[2] = room_speed * 3;
+            room_goto(rm_splash_screen);
             break;
     }
 }

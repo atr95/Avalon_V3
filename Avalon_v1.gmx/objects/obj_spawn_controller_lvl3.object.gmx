@@ -432,7 +432,6 @@ if(global.enemies &lt; 1)
             break;
             
         case (12):  // Victory
-            scr_grunt_5_back();
             global.encounter_number += 1;
             break;
             
