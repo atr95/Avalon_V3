@@ -13,4 +13,4 @@ for(x_val = 480; x_val < 736; x_val += 128)
     instance_create(x_val, y_val, obj_grunt_1);
 }
 
-global.enemies += 4;
+global.enemies += 5;

@@ -184,7 +184,7 @@ else if(move_3==true)
     if(starting_x == x)
     {
     move_3=false;
-    
+    scr_lancer_pentad();
     alarm[6] = room_speed * 8;
     }
 }
@@ -207,6 +207,7 @@ else if(move_5==true)
     y+=1
     if(starting_x==x)
     {
+    scr_grunt_moving_tracker_3();
     move_5=false;
     
     alarm[8] = room_speed * 8;
