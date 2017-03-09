@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// Level 1 spawn system. 
+            <string>// Level 2 spawn system. 
 global.enemies = 0;
 global.encounter_number = 0;
 //gives the player a few seconds before it starts

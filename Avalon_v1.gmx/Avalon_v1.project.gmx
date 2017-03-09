@@ -57,6 +57,7 @@
       <script>scripts\scr_grunt_trackers_2.gml</script>
       <script>scripts\scr_grunt_trackers_4.gml</script>
       <script>scripts\scr_grunt_running_diaganal_5.gml</script>
+      <script>scripts\scr_grunt_moving_tracker_3.gml</script>
     </scripts>
     <scripts name="scr_group_lancer_spawns">
       <script>scripts\scr_lancer_pentad.gml</script>

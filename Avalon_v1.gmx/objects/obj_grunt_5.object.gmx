@@ -54,7 +54,7 @@ alarm[0]=room_speed*2;
             <kind>1</kind>
             <string>turn_1=false;
 
-target_dir=point_direction(obj_player_parent.x,obj_player_parent.y,x,y);
+target_dir=point_direction(obj_player_parent.x,obj_player_parent.y - 46,x,y);
 image_angle=target_dir-90;
 </string>
           </argument>
