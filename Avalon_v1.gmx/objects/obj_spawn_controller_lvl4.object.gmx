@@ -60,7 +60,7 @@ if(global.enemies &lt; 1)
     switch (global.encounter_number)
     {
         case (0):
-            scr_grunt_4_back();
+            scr_dread_2();
             global.encounter_number += 1;
     
 
