@@ -336,7 +336,7 @@ if(alarm[0]&gt;0)
     }
     if(alarm[5]&gt;0)
     {
-        alarm[4]++;
+        alarm[5]++;
     }
 }
 
