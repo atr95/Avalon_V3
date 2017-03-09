@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>enemy_health = 2000
+            <string>enemy_health = 1500
 move_1 = true;
 starting_y = y;
 starting_x = x;

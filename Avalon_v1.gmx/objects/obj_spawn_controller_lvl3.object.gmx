@@ -86,6 +86,31 @@ global.encounter_number += 1;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="9">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//spawn medkits
+scr_medkit()
+alarm[9] = room_speed * 35;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="7">
       <action>
         <libid>1</libid>
@@ -313,6 +338,7 @@ if(global.enemies &lt; 1)
     {
        
         case (0):
+        alarm[9] = room_speed * 25;
             alarm[5] = 1;
             alarm[6] = room_speed * 1;
             scr_grunt_4_back();

@@ -36,6 +36,31 @@ start=false;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="9">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//spawn medkits
+scr_medkit()
+alarm[9] = room_speed * 35;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="6">
       <action>
         <libid>1</libid>
@@ -238,6 +263,7 @@ if(global.enemies &lt; 1)
     {
        
         case (0):
+            alarm[9] = room_speed * 15;
             scr_grunt_running_diaganal_5();
             scr_grunt_running_diaganal_5();
             scr_grunt_trackers_4();
@@ -258,6 +284,7 @@ if(global.enemies &lt; 1)
         
         case (3):
             alarm[3] = 5; //start grunt pyramid runs.
+             alarm[1] = 0; // stop lancers from spawning.
             scr_lancer_sideways_1();
             global.encounter_number += 1;
             break;
@@ -265,26 +292,25 @@ if(global.enemies &lt; 1)
         case (4):
             scr_lancer_sideways_1();
             scr_lancer_pair();
-            scr_medkit();
             global.encounter_number += 1;
             break;
         
         case (5):
-            alarm[1] = 0; // stop lancers from spawning.
+            scr_grunt_running_diaganal_5();
             alarm[3] = 0; // stop grunt pyramids from spawning.
             scr_grunt_trackers_4();
-            alarm[4] = 1; //Start the lancer runs down the middle
+            scr_grunt_mobile_line();
             global.encounter_number += 1;
             break;
         
         case (6):
-            scr_grunt_4_back();
+        alarm[4] = 1; //Start the lancer runs down the middle
             scr_grunt_mobile_line();
             scr_grunt_trackers_2();
             global.encounter_number += 1;
             break;
             
-        case (7): // Dreadnaught with lancer runs.
+        case (7): // Dreadnaught with lancer 
         alarm[4] = 0; // stop the pentad hell.
         scr_dread_1();
         scr_lancer_sideways_1();
@@ -296,6 +322,7 @@ if(global.enemies &lt; 1)
         alarm[3] = 1;// start grunts
         scr_grunt_trackers_4()
         scr_lancer_sideways_1();
+        scr_medkit();
             global.encounter_number += 1;
             break;
             
