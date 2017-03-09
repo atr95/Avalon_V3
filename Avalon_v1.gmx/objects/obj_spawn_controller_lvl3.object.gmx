@@ -256,7 +256,8 @@ scr_grunt_moving_tracker_3();
             <kind>1</kind>
             <string>//Victory timer!
 
-room_goto_next();
+scr_lancer_sideways_1();
+alarm[2] = room_speed * 50;
 </string>
           </argument>
         </arguments>
@@ -432,13 +433,15 @@ if(global.enemies &lt; 1)
             break;
             
         case (12):  // Victory
+            scr_boss_spawn();
+            alarm[2] = room_speed * 30;
             global.encounter_number += 1;
             break;
             
         case (13):  // Victory
             // Victory transition
             global.encounter_number += 1;
-            alarm[2] = room_speed * 3;
+            room_goto_next();
             break;
     }
 }

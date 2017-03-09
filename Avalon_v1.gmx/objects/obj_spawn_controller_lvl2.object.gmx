@@ -347,7 +347,7 @@ if(global.enemies &lt; 1)
             
         case (11): // Real Boss
         alarm[3] = 0;
-        scr_grunt_4_back();
+        scr_boss_spawn();
             global.encounter_number += 1;
             break;
             
