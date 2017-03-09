@@ -109,6 +109,7 @@ global.encounter_number += 1;
 instance_create(-128, 256, obj_lancer_2_a);
 instance_create(room_width + 128, 352, obj_lancer_3_a);
 alarm[6] = room_speed;
+global.enemies += 2;
 </string>
           </argument>
         </arguments>
@@ -211,8 +212,8 @@ alarm[4] = room_speed * 4;
           <argument>
             <kind>1</kind>
             <string>// Continuously spawn moving grunt trackers.
-alarm[2] = room_speed * 9;
-scr_grunt_moving_tracker_3();
+alarm[2] = room_speed * 15;
+scr_grunt_moving_fort();
 </string>
           </argument>
         </arguments>
@@ -274,7 +275,7 @@ if(global.enemies &lt; 1)
         case (1):
             alarm[1] = room_speed; // Dreadnaught comes in. Dread 1
             scr_grunt_trackers_2();
-            alarm[2] = 1; // Spawn tracker packs until dread is dead
+            alarm[2] = 1; // Spawn fort packs until dread is dead
             global.encounter_number += 1;
             break;
         
@@ -283,19 +284,18 @@ if(global.enemies &lt; 1)
             alarm[11] = 1; // Begin spawning health packs once every 60 seconds.
             alarm[3] = 1 // Begin lancer runs alternate between doubles and triples.
             alarm[4] = 1 //Lancer triple. switch back to double.
-            alarm[5] = room_speed * 20; //stop the lancers.
+            alarm[5] = room_speed * 10; //stop the lancers.
             global.encounter_number += 1;
             break;
         
         case (3):
             scr_grunt_5_back();
-            scr_grunt_running_pyramid()
             scr_grunt_moving_fort();
             global.encounter_number += 1;
             break;
         
         case (4):
-            scr_lancer_pentad();
+            
             scr_grunt_4_back();
             scr_grunt_mobile_line();
             global.encounter_number += 1;
@@ -320,7 +320,7 @@ if(global.enemies &lt; 1)
             global.encounter_number += 1;
             break;
             
-        case (8):  // Morgan Le Flay
+        case (8):  // Morgan Le Flay - Dragon
             scr_medkit();
             scr_medkit();
             scr_medkit();
