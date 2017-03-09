@@ -4,12 +4,18 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_song_1</sound>
+    <sound>sound\snd_song_2</sound>
+    <sound>sound\snd_explosion</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="spr_group_menu">
       <sprite>sprites\spr_splash_screen</sprite>
       <sprite>sprites\spr_main_menu</sprite>
       <sprite>sprites\spr_title</sprite>
+      <sprite>sprites\spr_game_over</sprite>
+      <sprite>sprites\spr_text_box</sprite>
     </sprites>
     <sprites name="spr_group_player">
       <sprite>sprites\spr_player_shield</sprite>
@@ -80,10 +86,16 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_pause</object>
+    <objects name="obj_group_story">
+      <object>objects\obj_text_box</object>
+      <object>objects\obj_story</object>
+      <object>objects\obj_story_lvl1_start</object>
+    </objects>
     <objects name="obj_group_menu">
       <object>objects\obj_main_menu</object>
       <object>objects\obj_chapter_select</object>
       <object>objects\obj_team_name</object>
+      <object>objects\obj_game_over</object>
     </objects>
     <objects name="obj_group_player">
       <object>objects\obj_player_parent</object>
@@ -138,6 +150,10 @@
       <object>objects\obj_spawn_controller_lvl3</object>
       <object>objects\obj_spawn_controller_lvl4</object>
     </objects>
+    <objects name="obj_group_music">
+      <object>objects\obj_music_1</object>
+      <object>objects\obj_music_2</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_splash_screen</room>
@@ -146,6 +162,7 @@
     <room>rooms\rm_level_2</room>
     <room>rooms\rm_level_3</room>
     <room>rooms\rm_level_4</room>
+    <room>rooms\rm_game_over</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
