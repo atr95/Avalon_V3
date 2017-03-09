@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>enemy_health = 2000
+            <string>enemy_health = 1750
 move_1 = true;
 starting_y = y;
 starting_x = x;
@@ -173,7 +173,7 @@ else if(move_2==true)
     {
     move_2 = false;
     scr_lancer_pair();
-    alarm[5] = room_speed * 8;
+    alarm[5] = room_speed * 4;
     }
 }
 else if(move_3==true)
@@ -184,8 +184,8 @@ else if(move_3==true)
     if(starting_x == x)
     {
     move_3=false;
-    scr_lancer_pentad();
-    alarm[6] = room_speed * 8;
+    scr_grunt_running_diaganal_5();
+    alarm[6] = room_speed * 4;
     }
 }
 else if(move_4 == true)
@@ -197,7 +197,7 @@ else if(move_4 == true)
     {
     move_4=false;
     scr_lancer_pair();
-    alarm[7] = room_speed * 8;
+    alarm[7] = room_speed * 4;
     }
 }
 else if(move_5==true)
@@ -210,7 +210,7 @@ else if(move_5==true)
     scr_grunt_moving_tracker_3();
     move_5=false;
     
-    alarm[8] = room_speed * 8;
+    alarm[8] = room_speed * 4;
     }
 }
 }
