@@ -68,9 +68,9 @@ shift_press=false;
 beam_cost=50;
 
 //unlocks
-unlock_2=true;
-unlock_3=true;
-unlock_4=true;
+unlock_2=false;
+unlock_3=false;
+unlock_4=false;
 
 //intro variables
 start=false;
