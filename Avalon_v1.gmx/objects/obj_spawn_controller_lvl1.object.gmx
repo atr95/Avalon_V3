@@ -232,9 +232,8 @@ if(global.enemies &lt; 1)
             break;
         
         case (10):
-            scr_grunt_4_back();
             scr_grunt_running_pyramid();
-            scr_grunt_trackers_2();
+            scr_grunt_trackers_4();
             global.encounter_number += 1;
             break;
             
