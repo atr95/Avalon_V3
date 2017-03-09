@@ -109,6 +109,10 @@ if(fly_off==false)
     if (push == 1) 
     {
         fly_off=true;
+        with(obj_music_1)
+        {
+        audio_sound_gain(music,0,2500);
+        }
     }  
 }
 else
@@ -127,6 +131,10 @@ else
         background_alpha-=0.05;
         if(a==0)
         {
+            with(obj_music_1)
+            {
+            instance_destroy();
+            }
             scr_chapter_select();
             instance_destroy();
         }

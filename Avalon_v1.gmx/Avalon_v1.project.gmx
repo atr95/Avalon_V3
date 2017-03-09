@@ -4,7 +4,11 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_song_1</sound>
+    <sound>sound\snd_song_2</sound>
+    <sound>sound\snd_explosion</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="spr_group_menu">
       <sprite>sprites\spr_splash_screen</sprite>
@@ -128,6 +132,10 @@
       <object>objects\obj_spawn_controller_lvl2</object>
       <object>objects\obj_spawn_controller_lvl3</object>
       <object>objects\obj_spawn_controller_lvl4</object>
+    </objects>
+    <objects name="obj_group_music">
+      <object>objects\obj_music_1</object>
+      <object>objects\obj_music_2</object>
     </objects>
   </objects>
   <rooms name="rooms">

@@ -46,18 +46,16 @@ if(string_width(string(menu[i]))&gt;l)
 a=0;
 background_alpha[0]=0;
 
-//cylce images
-//relevent for menu cursor that has animation
-/*
-alarm[0]=room_speed*0.5;
-image_speed=0;
-image=0;
-*/
 //Button variables
 
 move = 0;
 push=0;
 push_end=0;
+
+if (!instance_exists(obj_music_1))
+    {
+        instance_create(0,0,obj_music_1);
+    }
 </string>
           </argument>
         </arguments>
