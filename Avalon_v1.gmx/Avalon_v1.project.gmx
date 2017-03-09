@@ -51,6 +51,7 @@
         <sprite>sprites\spr_dragon_head</sprite>
         <sprite>sprites\spr_dragon_left</sprite>
         <sprite>sprites\spr_dragon_right</sprite>
+        <sprite>sprites\spr_dragon_r</sprite>
         <sprite>sprites\spr_morgan</sprite>
       </sprites>
     </sprites>
@@ -92,6 +93,7 @@
       <script>scripts\scr_dread_2.gml</script>
     </scripts>
     <script>scripts\scr_medkit.gml</script>
+    <script>scripts\scr_boss_spawn.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\font_main_menu</font>

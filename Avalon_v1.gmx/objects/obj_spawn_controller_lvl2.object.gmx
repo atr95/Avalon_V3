@@ -53,9 +53,11 @@ start=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//spawn medkits
-scr_medkit()
-alarm[9] = room_speed * 35;
+            <string>//spawn medkits if health is low.
+if(obj_player_parent.player_health &lt; 50){
+    scr_medkit()
+}
+alarm[9] = room_speed * 30;
 </string>
           </argument>
         </arguments>

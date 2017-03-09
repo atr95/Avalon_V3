@@ -58,7 +58,7 @@ if(move_1==true)
 {
     //moves forward slowly 96 pixels
     y+=6;
-    if(starting_y+192==y)
+    if(starting_y+256==y)
     {
         move_1=false;
         move_2=true;

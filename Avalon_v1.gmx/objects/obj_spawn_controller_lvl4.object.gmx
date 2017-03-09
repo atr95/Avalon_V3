@@ -53,9 +53,11 @@ start=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// spawn a healthpack once every 30 seconds.
-alarm[11] = room_speed * 30;
-scr_medkit();
+            <string>//spawn medkits if health is low.
+if(obj_player_parent.player_health &lt; 50){
+    scr_medkit()
+}
+alarm[9] = room_speed * 30;
 </string>
           </argument>
         </arguments>
@@ -233,14 +235,22 @@ if(global.enemies &lt; 1)
             break;
         
         case (3):
+            scr_grunt_5_back();
+            scr_grunt_running_pyramid()
+            scr_grunt_moving_fort();
             global.encounter_number += 1;
             break;
         
         case (4):
+            scr_lancer_pentad();
+            scr_grunt_4_back();
+            scr_grunt_mobile_line();
             global.encounter_number += 1;
             break;
         
         case (5):
+        alarm[2] = 0;
+            
             global.encounter_number += 1;
             break;
         
@@ -249,31 +259,16 @@ if(global.enemies &lt; 1)
             break;
             
         case (7): 
+            
             global.encounter_number += 1;
             break;
             
-        case (8):
-            global.encounter_number += 1;
-            break;
-            
-        case (9):
-            global.encounter_number += 1;
-            break;
-            
-        case (10):
-            global.encounter_number += 1;
-            break;
-            
-        case (11): // 
-            global.encounter_number += 1;
-            break;
-            
-        case (12):  // Morgan Le Flay
+        case (8):  // Morgan Le Flay
             scr_grunt_5_back();
             global.encounter_number += 1;
             break;
             
-        case (13):  // Victory
+        case (9):  // Victory
             // Victory transition
             global.encounter_number += 1;
             alarm[2] = room_speed * 3;
