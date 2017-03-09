@@ -84,19 +84,31 @@ a_press = (keyboard_check(ord('A')));
 d_press = (keyboard_check(ord('D')));
 if(w_press==true)
 {
+    if(y&gt;0)
+    {
         y-=obj_player_parent.move_speed;
+    }
 }
 if(s_press==true)
 {
+    if(y&lt;room_height-96)
+    {
         y+=obj_player_parent.move_speed;
+    }
 }
 if(a_press==true)
 {
+    if(x&gt;0)
+    {
         x-=obj_player_parent.move_speed*obj_player_parent.side_speed;
+    }
 }
 if(d_press==true)
 {
+    if(x&lt;room_width)
+    {
         x+=obj_player_parent.move_speed*obj_player_parent.side_speed;
+    }
 }
 }
 else
