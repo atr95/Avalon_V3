@@ -14,7 +14,8 @@
       <sprite>sprites\spr_splash_screen</sprite>
       <sprite>sprites\spr_main_menu</sprite>
       <sprite>sprites\spr_title</sprite>
-      <sprite>sprites\sprite23</sprite>
+      <sprite>sprites\spr_game_over</sprite>
+      <sprite>sprites\spr_text_box</sprite>
     </sprites>
     <sprites name="spr_group_player">
       <sprite>sprites\spr_player_shield</sprite>
@@ -80,6 +81,11 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_pause</object>
+    <objects name="obj_group_story">
+      <object>objects\obj_text_box</object>
+      <object>objects\obj_story</object>
+      <object>objects\obj_story_lvl1_start</object>
+    </objects>
     <objects name="obj_group_menu">
       <object>objects\obj_main_menu</object>
       <object>objects\obj_chapter_select</object>

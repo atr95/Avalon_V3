@@ -7,7 +7,7 @@ switch (menu_position)
     case 0:
     {
     //all chapters (story start yes)
-    //set global variable that makes story happen)
+        global.story_mode=true;
         room_goto(rm_level_1);
         break;
     }

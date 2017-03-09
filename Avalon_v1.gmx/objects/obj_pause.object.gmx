@@ -77,7 +77,9 @@ push_end=0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(pause_game==0)
+            <string>if(global.story_pause==false)
+{
+if(pause_game==0)
 {
     pause_game = max(keyboard_check_released(vk_escape),0);
     move=0;
@@ -120,6 +122,7 @@ else
         scr_pause_menu();
     }
 }
+}
 </string>
           </argument>
         </arguments>
@@ -142,7 +145,9 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.pause)
+            <string>if(global.story_pause==false)
+{
+if(global.pause)
 {
     draw_set_color(c_black);
     draw_set_alpha(0.5);
@@ -161,6 +166,7 @@ else
     
     
     draw_set_color(c_black);
+}
 }
 </string>
           </argument>
