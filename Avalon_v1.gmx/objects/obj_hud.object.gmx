@@ -99,7 +99,7 @@ draw_set_alpha(1);
             <string>draw_self();
 draw_set_halign(fa_left);
 //fps counter. if this ever goes under 30, we have a memory leak
-draw_text(32,32, "FPS: " + string(fps_real));
+//draw_text(32,32, "FPS: " + string(fps_real));
 
 draw_text(x+32,y+32,"Health: ");
 draw_rectangle(x+96,y+16,x+352,y+40,true);

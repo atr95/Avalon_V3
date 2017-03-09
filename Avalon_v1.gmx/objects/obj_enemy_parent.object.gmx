@@ -51,7 +51,8 @@ enemy_health=100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.enemies-=1;
+            <string>audio_play_sound(snd_enemy_exp,0,false);
+global.enemies-=1;
 </string>
           </argument>
         </arguments>

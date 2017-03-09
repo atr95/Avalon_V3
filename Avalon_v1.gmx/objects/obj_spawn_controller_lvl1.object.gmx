@@ -232,9 +232,8 @@ if(global.enemies &lt; 1)
             break;
         
         case (10):
-            scr_grunt_4_back();
             scr_grunt_running_pyramid();
-            scr_grunt_trackers_2();
+            scr_grunt_trackers_4();
             global.encounter_number += 1;
             break;
             
@@ -244,11 +243,16 @@ if(global.enemies &lt; 1)
             global.encounter_number += 1;
             break;
             
-        case (12):  // Victory
+        case (12): //story event
+            scr_story_1();
+            global.encounter_number+=1;
+            break;    
+            
+        case (13):  // Victory
             scr_boss_spawn();
             global.encounter_number += 1;
             break;
-        case(13):
+        case(14):
         //Real victory
         room_goto_next();
         break;
